@@ -1,0 +1,246 @@
+/* Creating variables: don't need to write repeated css */
+:root {
+    --box-shadow: 0px 1px 4px 1px  rgba(199,199,199,1);
+    --income: green;
+    --expense: red;
+
+}
+
+/*Customizing the body*/ 
+body {
+    
+    background-image: url('https://cdn.lifehack.org/wp-content/uploads/2019/03/spending-tracker-app-1024x768.jpeg');
+    /*Blurring the background image*/
+    backdrop-filter: blur(10px); background-position: absolute;
+    /*Resizing the background image*/
+    background-size: 2350px;
+    font-family: 'Crete Round', 'sans-serif';
+    /* The flex property sets the flexible length on flexible items */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*Customizing the headings color*/
+h1, h2 {
+
+    color: wheat;
+}
+
+.MyApp {
+    /* background-color: ; */
+    color: beige;
+    padding-right: 30px;
+    padding-left: 30px;
+    border-left: 10px black;
+    border-right: 10px black;
+    
+
+}
+
+/*Customizing the "expense tracker pro" header*/
+.MyApp h1 {
+    text-align: center;
+    font-family: algerian;
+    
+}
+
+/*Customizing the "my transaction history" and "add new transaction" header*/
+h2 {
+    text-transform: uppercase;
+    font-size: 1.2em;
+
+}
+
+.balance-container #balance {
+    font-size: 1.5em;
+    color: rgb(50, 221, 59);
+
+}
+
+.cashflow-container {
+    /* Using display flex to align both the income and expense on the same line */
+    display: flex;
+    box-shadow: var(--box-shadow);
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(107, 194, 184, 0.904);
+    
+}
+
+.income-container {
+    border-right: 1px solid #cccccc;
+    /*Adding space in the container*/
+    padding-right: 30px;
+    padding-left: 20px;
+        
+}
+
+.expense-container {
+    /*Adding space in the container*/
+    padding-left: 30px;
+    padding-right: 20px;
+
+}
+
+#income, #expense {
+    /*Srtting the font size of income and expense amount figures*/
+    font-size: 1.3em;
+    
+}
+
+#income {
+    /*Using the variable income to change text color of income amount to green*/
+    color: var(--income);
+
+}
+
+#expense {
+    /*Using the variable expense to change text color of expense amount to red*/
+    color: var(--expense);
+
+}
+
+/*Customizing the transaction history section*/
+.transaction-container {
+    /*Adding some space outside the upper section of the transaction history*/
+    margin-top: 40px;
+
+}
+
+#transaction {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#transaction li {
+    /* Using display flex to align the button to the transaction */
+    display: flex;
+    flex-direction: row;
+    /* Using justify-content to move this div section to the right*/
+    justify-content: space-between;
+    /*Add padding and margin to put some space in between the transaction entries*/
+    padding: 10px;
+    margin-bottom: 10px;
+    /* Calling the variable box shadow*/
+    box-shadow: var(--box-shadow);
+}
+
+/*Adding some colors and spacing to the transaction amount in the transaction history section*/
+#transaction li span {
+
+    display: inline-block;
+    /*Text need to be changed to white to be more visible in the green background*/
+    color: white;
+    /*Adding some space to customize*/
+    padding: 5px;
+    border-radius: 3px;
+    margin-right: 5px;
+
+}
+
+#transaction li .income-amount {    
+    /*Calling the variable income*/
+    background-color: var(--income);
+    
+}
+
+#transaction li .expense-amount {    
+    /*Calling the variable expense*/
+    background-color: var(--expense);
+    
+}
+
+/*Customizing the transaction history Delete Button*/
+#transaction li button {
+    /*Addind space in an order of: top, right, bottom, left*/
+    padding: 5px 10px 5px 10px;
+
+}
+
+/*Customizing the "Add new transaction"*/
+.form-container {
+    /*Adding some space outside the upper section of the "Add new transaction"*/
+    margin-top: 40px;
+}
+
+/*Customizing the "Add New Transaction Input section"*/
+.form-container form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+/*Customizing each elements of the form*/
+
+/*Styling labels*/
+.form-container form label {
+    /*Adding space in between the input sections*/
+    padding-bottom: 10px;
+
+}
+
+/*Customizing the Transaction Name input section*/
+#name {
+    height: 25px;
+    margin-bottom: 10px;
+
+}
+
+/*Customizing the Transaction Name input section*/
+#amount {
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+/*Customizing the add income button*/
+.form-container form button {
+    /*Removing the borders to make look smoother*/
+    border: none;
+    /*Addind space in between the buttons*/
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    /*Increasing the font size and converting it to uppercase*/
+    font-size: 1em;
+    text-transform: uppercase;
+    /*Changing the font color to white to be more visible on the red&green background color*/
+    color: white;
+
+}
+
+/*Customizing the add income button*/
+#incomeBtn {
+    /*Calling the income variable*/
+    background-color: var(--income);
+
+}
+
+/*Customizing the add expense button*/
+#expenseBtn {
+    /*Calling the income variable*/
+    background-color: var(--expense);
+
+}
+
+/*Customizing the bar chart's size*/
+.chartBox {
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    
+}
+
+/*Adding spacing and color to the bar chart*/
+#chart-container {
+    margin-top: 30px;
+    background-color: rgb(214, 211, 211);
+    box-shadow: var(--box-shadow);
+       
+}

@@ -1,23 +1,161 @@
 <!DOCTYPE html>
 
-<html>
+<html lang = "en">
 
-  
-  <head>
-    <title>My Web</title>
-    
-    <link rel="stylesheet" href="/styles/main.css">
+    <head>
+        <title>Expense Tracker Pro</title>
+        
+        <!--Importing Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
 
-  </head>
+        <!--Link to CSS-->
+        <link rel = "stylesheet" href = "site.css">
 
-  <body id="web">
+        <!--Link to Content Delivery Network of chartjs-->
+        <!--Importing Library-->
+        <script src = "https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
 
-    <h1 id="heading1">Welcome to My Web!</h1>
-    
-    <h2>Enjoy the Coding..!</h2>
+    </head>
 
-    <img src="/Images/Windows.jpg" alt = "Windows">
+    <body>
+        
+        <!--Header-->
+        <h1>OU Presents to you</h1>
 
-  </body>
-  
+        <!-- Creating a section for the application to host all the containers -->
+        <div class ="MyApp">
+
+            <h1>Expense Tracker Pro</h1>
+            
+            <!-- Creating a section to host the balance amount -->
+            <div class = "balance-container">
+                <h2>My Balance</h2>
+                <div id="balance">Rs0</div>
+            </div>
+
+            <!-- Creating a section to host the income and expense amount -->
+            <div class = "cashflow-container">
+
+                <!-- Income section -->
+                <div class = "income-container">
+                    <h2>My Income</h2>
+                    <div id = "income">Rs0</div>
+                </div>
+
+                <!-- Expense section -->
+                <div class = "expense-container">
+                    <h2>My Expense</h2>
+                    <div id = "expense">Rs0</div>
+                </div>
+
+            <!-- Creating a section to host the Bar chart -->
+            </div class = "chartBox">
+
+            <!-- Creating a section for chart id for CSS customization -->
+                <div id = "chart-container">
+                    <canvas id = "chart"></canvas>
+
+                    <!-- Creating the Bar chart fron chartjs.org -->
+                    <script>
+                        const ctx = document.getElementById('chart').getContext('2d');
+                        const myChart = new Chart(ctx, {
+                            //barchart
+                            type: 'bar',
+
+                            //Populating the contents of the bar chart
+                            data: {
+
+                                //Assigning names to the bars in the chart
+                                labels: ['Income', 'Expense'],
+                                datasets: [{
+
+                                    //Naming the chart title
+                                    label: 'Income and Expense Chart',
+
+                                    // Assigning the values to the chart, starting with income to the left, expense to the left
+                                    data: [18500, 4200],
+
+                                    // Assigning colors to the income and expense bars
+                                    backgroundColor: [
+
+                                        //Green color for income
+                                        'rgba(75, 192, 192, 0.2)',
+
+                                        //Red color for expense
+                                        'rgba(255, 99, 132, 0.2)'
+                                        
+                                    ],
+
+                                    // Assigning color to the income and expense bars' borders
+                                    borderColor: [
+
+                                        // Green color for the border of income bar
+                                        'rgba(75, 192, 192, 1)',
+
+                                        // Red color for the border of expense bar
+                                        'rgba(255, 99, 132, 1)'
+                                    
+                                    ],
+                                    //Assiging border
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                    </script>
+                </div>                   
+
+            <div>
+
+            </div>
+            
+            <!-- Creating a section to host the transaction history -->
+            <div class = "transaction-container">
+
+                <h2>My Transaction History</h2>
+                
+                <!-- Creating ul for the unordered list hosting the transaction history -->
+                <!-- Creating id for customization in CSS -->
+                <ul id = "transaction">
+                    
+                </ul>
+
+            </div>
+
+            <!-- Creating a section to register the name of the transaction and the amount of the transaction -->
+            <!-- Creating a section to host the add income and add expense button -->
+            <div class = "form-container">
+
+                <h2>Add new transaction</h2>
+                <!-- return false to stop the form from refreshing to clear data -->
+                <form onsubmit = "return false;">
+                    
+                    <label for = "name">Name</label>
+                    <input id = "name" type = "text">
+                    <label for = "amount">Amount</label>
+                    <input id = "amount" type = "number">
+                    <button id = "incomeBtn">Add Income</button>
+                    <button id = "expenseBtn">Add Expense</button>
+                </form>
+
+            </div>
+
+        
+        </div>
+
+        <!-- Linking the javascript -->
+        <script src="validation.js"></script>
+
+                  
+    </body>
+
 </html>
