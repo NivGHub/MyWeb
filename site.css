@@ -11,7 +11,7 @@ body {
     
     background-image: url('https://cdn.lifehack.org/wp-content/uploads/2019/03/spending-tracker-app-1024x768.jpeg');
     /*Blurring the background image*/
-    backdrop-filter: blur(10px); background-position: absolute;
+    backdrop-filter: blur(10px);
     /*Resizing the background image*/
     background-size: 2350px;
     font-family: 'Crete Round', 'sans-serif';
@@ -34,10 +34,7 @@ h1, h2 {
     color: beige;
     padding-right: 30px;
     padding-left: 30px;
-    border-left: 10px black;
-    border-right: 10px black;
-    
-
+       
 }
 
 /*Customizing the "expense tracker pro" header*/
