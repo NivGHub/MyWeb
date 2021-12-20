@@ -13,7 +13,7 @@ body {
     /*Blurring the background image*/
     backdrop-filter: blur(10px);
     /*Resizing the background image*/
-    background-size: 2750px;
+    background-size: 2350px;
     font-family: 'Crete Round', 'sans-serif';
     /* The flex property sets the flexible length on flexible items */
     display: flex;
